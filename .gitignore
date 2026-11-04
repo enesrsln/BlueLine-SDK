@@ -1,0 +1,42 @@
+# OS / editors
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.iml
+
+# Swift / Xcode
+.build/
+.swiftpm/
+xcuserdata/
+DerivedData/
+
+# Gradle / Android / Kotlin
+.gradle/
+.kotlin/
+build/
+local.properties
+
+# Flutter / Dart
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+/flutter/pubspec.lock
+**/Flutter/ephemeral/
+**/flutter/ephemeral/
+**/Pods/
+**/Flutter/Generated.xcconfig
+**/Flutter/flutter_export_environment.sh
+**/GeneratedPluginRegistrant.*
+**/generated_plugin_registrant.*
+**/generated_plugins.cmake
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+dist/
+
+# Recordings made by the examples
+*.csv

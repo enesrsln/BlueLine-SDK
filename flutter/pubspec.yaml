@@ -1,0 +1,17 @@
+name: blueline_sdk
+description: Stream EEG and accelerometer data from BlueLine devices over Bluetooth Low Energy, with filters, spectrum and band powers.
+version: 1.0.0
+publish_to: none
+
+environment:
+  sdk: ^3.4.0
+  flutter: ">=3.22.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  universal_ble: ^3.2.0
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: 6.0.0

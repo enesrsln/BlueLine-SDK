@@ -1,0 +1,35 @@
+BlueLine SDK License
+
+Copyright (c) 2026 BlueLine. All rights reserved.
+
+This repository (the "SDK") is made available so that developers can build
+applications that work with BlueLine devices.
+
+1. Permitted use. You may use, copy and modify the SDK, and include it in
+   source or compiled form in your applications, solely to communicate with
+   and process data from genuine BlueLine devices.
+
+2. Restrictions. You may not:
+   a. use the SDK, or any part of it, with devices other than BlueLine devices;
+   b. distribute the SDK on its own, or as part of another SDK, library or
+      developer tool;
+   c. sell, sublicense or rent the SDK itself;
+   d. remove or alter this notice in copies of the SDK's source code.
+
+3. Ownership. The SDK, the BlueLine protocol and the documentation remain the
+   property of BlueLine. No rights are granted other than those stated above.
+
+4. No warranty. THE SDK IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+   EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+   MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT.
+   BlueLine devices and the SDK are not medical devices; do not use them for
+   diagnosis or treatment.
+
+5. Limitation of liability. IN NO EVENT SHALL BLUELINE BE LIABLE FOR ANY
+   CLAIM, DAMAGES OR OTHER LIABILITY ARISING FROM, OUT OF OR IN CONNECTION WITH
+   THE SDK OR ITS USE.
+
+6. Termination. This license ends automatically if you breach its terms. You
+   must then stop using the SDK and delete your copies.
+
+For other uses, contact BlueLine.

@@ -1,0 +1,21 @@
+name: blueline_example
+description: Example app for the BlueLine SDK for Flutter.
+publish_to: none
+version: 1.0.0
+
+environment:
+  sdk: ^3.4.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+  blueline_sdk:
+    path: ../
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true

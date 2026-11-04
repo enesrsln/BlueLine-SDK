@@ -1,0 +1,253 @@
+{
+  "description": "BlueLine BLE protocol v1 test vectors. Hex is uppercase, no separators. 'expect': null means the decoder must reject the bytes.",
+  "info": [
+    {
+      "name": "valid",
+      "hex": "0104010400030118E803FA000406A0252600640013081B00EFCDAB8967452301",
+      "expect": {
+        "protocolVersion": 1,
+        "model": 4,
+        "hasFactorySerial": true,
+        "channelCount": 4,
+        "firmwareVersion": "0.3.1",
+        "adcBits": 24,
+        "adcRateHz": 1000,
+        "signalRateHz": 250,
+        "decimation": 4,
+        "gain": 6,
+        "vrefMicrovolts": 2500000,
+        "memsRateHz": 100,
+        "maxSamplesPerPacket": 19,
+        "signalHeaderBytes": 8,
+        "featureBits": 27,
+        "features": [
+          "signal",
+          "mems",
+          "identify",
+          "setGain"
+        ],
+        "chipIdHex": "0123456789ABCDEF",
+        "microvoltsPerCount": 0.04967053731282552,
+        "isSupported": true
+      }
+    },
+    {
+      "name": "protocol 2 decodes but is unsupported",
+      "hex": "0204010400030118E803FA000406A0252600640013081B00EFCDAB8967452301",
+      "expect": {
+        "protocolVersion": 2,
+        "isSupported": false
+      }
+    },
+    {
+      "name": "header 10 is unsupported",
+      "hex": "0104010400030118E803FA000406A02526006400130A1B00EFCDAB8967452301",
+      "expect": {
+        "signalHeaderBytes": 10,
+        "isSupported": false
+      }
+    },
+    {
+      "name": "no signal feature is unsupported",
+      "hex": "0104010400030118E803FA000406A0252600640013080200EFCDAB8967452301",
+      "expect": {
+        "featureBits": 2,
+        "isSupported": false
+      }
+    },
+    {
+      "name": "gain 0 is rejected",
+      "hex": "0104010400030118E803FA000400A0252600640013081B00EFCDAB8967452301",
+      "expect": null
+    },
+    {
+      "name": "31 bytes is rejected",
+      "hex": "0104010400030118E803FA000406A0252600640013081B00EFCDAB89674523",
+      "expect": null
+    }
+  ],
+  "signal": [
+    {
+      "name": "two samples with firmware gap flag",
+      "hex": "0102070040420F00000001FFFFFF7FFFFF800000123456EDCBAA00002AFFFFD6",
+      "channelCount": 4,
+      "expect": {
+        "gapBefore": true,
+        "session": 7,
+        "firstIndex": 1000000,
+        "samples": [
+          [
+            1,
+            -1,
+            8388607,
+            -8388608
+          ],
+          [
+            1193046,
+            -1193046,
+            42,
+            -42
+          ]
+        ]
+      }
+    },
+    {
+      "name": "one byte short",
+      "hex": "0102070040420F00000001FFFFFF7FFFFF800000123456EDCBAA00002AFFFF",
+      "channelCount": 4,
+      "expect": null
+    },
+    {
+      "name": "one byte too long",
+      "hex": "0102070040420F00000001FFFFFF7FFFFF800000123456EDCBAA00002AFFFFD600",
+      "channelCount": 4,
+      "expect": null
+    },
+    {
+      "name": "wrong channel count",
+      "hex": "0102070040420F00000001FFFFFF7FFFFF800000123456EDCBAA00002AFFFFD6",
+      "channelCount": 2,
+      "expect": null
+    },
+    {
+      "name": "full packet of 19 samples",
+      "hex": "0013010005000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "channelCount": 4,
+      "expect": {
+        "gapBefore": false,
+        "session": 1,
+        "firstIndex": 5,
+        "sampleCount": 19
+      }
+    }
+  ],
+  "mems": [
+    {
+      "name": "sample",
+      "hex": "09002A000000D2040000FBFF0C000001",
+      "expect": {
+        "session": 9,
+        "memsIndex": 42,
+        "signalIndex": 1234,
+        "x": -5,
+        "y": 12,
+        "z": 256,
+        "zG": 0.9984
+      }
+    },
+    {
+      "name": "signal stopped",
+      "hex": "090001000000FFFFFFFF000000000000",
+      "expect": {
+        "session": 9,
+        "memsIndex": 1,
+        "signalIndex": null,
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "name": "15 bytes is rejected",
+      "hex": "09002A000000D2040000FBFF0C0000",
+      "expect": null
+    }
+  ],
+  "status": [
+    {
+      "name": "streaming with faults",
+      "hex": "0106570CF7000900030000000400000005000000",
+      "expect": {
+        "isStreaming": true,
+        "flags": [
+          "txBlocked",
+          "adsFault"
+        ],
+        "batteryPercent": 87,
+        "gain": 12,
+        "mtu": 247,
+        "session": 9,
+        "signalSamplesDropped": 3,
+        "adcFramesLost": 4,
+        "memsSamplesDropped": 5
+      }
+    },
+    {
+      "name": "19 bytes is rejected",
+      "hex": "0106570CF70009000300000004000000050000",
+      "expect": null
+    }
+  ],
+  "controlRequest": [
+    {
+      "command": "startSignal",
+      "params": [],
+      "hex": "01"
+    },
+    {
+      "command": "setGain",
+      "params": [
+        12
+      ],
+      "hex": "100C"
+    }
+  ],
+  "controlResponse": [
+    {
+      "name": "start signal ok",
+      "hex": "01003412",
+      "expect": {
+        "opcode": 1,
+        "result": "ok",
+        "session": 4660
+      }
+    },
+    {
+      "name": "set gain ok",
+      "hex": "10000C0300",
+      "expect": {
+        "opcode": 16,
+        "result": "ok",
+        "session": 3
+      }
+    },
+    {
+      "name": "busy",
+      "hex": "FF04",
+      "expect": {
+        "opcode": 255,
+        "result": "busy",
+        "session": null
+      }
+    },
+    {
+      "name": "resist not supported",
+      "hex": "0501",
+      "expect": {
+        "opcode": 5,
+        "result": "notSupported",
+        "session": null
+      }
+    },
+    {
+      "name": "1 byte is rejected",
+      "hex": "01",
+      "expect": null
+    }
+  ],
+  "advertisement": [
+    {
+      "name": "BlueLine-4",
+      "manufacturerDataHex": "FFFF424C04EFBEADDE",
+      "expect": {
+        "model": 4,
+        "chipIdLow": 3735928559
+      }
+    },
+    {
+      "name": "iBeacon is rejected",
+      "manufacturerDataHex": "4C0002150000000000",
+      "expect": null
+    }
+  ]
+}

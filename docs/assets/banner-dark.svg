@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 334" width="1280" height="334" role="img" aria-label="BlueLine SDK">
+  <defs>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#000" flood-opacity="0.0"/>
+    </filter>
+  </defs>
+  <rect width="1280" height="334" rx="24" fill="#000000"/>
+  <g transform="translate(594.0 40) scale(0.08984)"><rect width="1024" height="1024" rx="230" fill="#000000" filter="url(#shadow)"/><rect x="2" y="2" width="1020" height="1020" rx="228" fill="none" stroke="#2C2C2E" stroke-width="4"/><polygon points="95,225 95,475 190,475 190,395 413,542 190,690 190,595 95,595 95,858 510,585 927,860 927,595 833,595 833,690 608,542 833,393 833,475 927,475 927,222 512,498" fill="#0070EC"/></g>
+  <text x="640.0" y="196" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="54" font-weight="700" fill="#F5F5F7" letter-spacing="-1.2">BlueLine SDK</text>
+  <text x="640.0" y="236" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="22" fill="#98989D">EEG and motion streaming for BlueLine devices</text>
+  <g font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="500">
+    <rect x="448.6" y="262" width="48" height="32" rx="16" fill="#1C1C1E" stroke="#2C2C2E"/><text x="472.5" y="283" text-anchor="middle" fill="#F5F5F7">iOS</text><rect x="504.40000000000003" y="262" width="65" height="32" rx="16" fill="#1C1C1E" stroke="#2C2C2E"/><text x="536.9" y="283" text-anchor="middle" fill="#F5F5F7">macOS</text><rect x="577.4000000000001" y="262" width="82" height="32" rx="16" fill="#1C1C1E" stroke="#2C2C2E"/><text x="618.5" y="283" text-anchor="middle" fill="#F5F5F7">Android</text><rect x="667.6000000000001" y="262" width="82" height="32" rx="16" fill="#1C1C1E" stroke="#2C2C2E"/><text x="708.7" y="283" text-anchor="middle" fill="#F5F5F7">Flutter</text><rect x="757.8000000000002" y="262" width="74" height="32" rx="16" fill="#1C1C1E" stroke="#2C2C2E"/><text x="794.6" y="283" text-anchor="middle" fill="#F5F5F7">Python</text>
+  </g>
+</svg>
