@@ -152,11 +152,6 @@ Full guide: [python/README.md](python/README.md)
 
 ## How a session works
 
-> [!IMPORTANT]
-> **Never mix samples of different sessions.** Changing the gain restarts
-> acquisition: a new session starts, sample indices restart at 0 and the
-> microvolt scale changes. The SDK delivers only packets of the current session.
-
 <details>
 <summary><b>Step by step</b></summary>
 <br>
@@ -196,6 +191,11 @@ Do not interpolate silently over a gap: mark it in the data. The index of the
 first sample after the gap is exact, so you can compute how many samples are
 missing.
 </details>
+
+> [!IMPORTANT]
+> **Never mix samples of different sessions.** Changing the gain restarts
+> acquisition: a new session starts, sample indices restart at 0 and the
+> microvolt scale changes. The SDK delivers only packets of the current session.
 
 ## Data reference
 
