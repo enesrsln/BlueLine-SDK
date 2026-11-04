@@ -37,7 +37,9 @@ everywhere and recorded data means the same thing on every platform.
 
 | Device | EEG channels | EEG rate | Accelerometer | Firmware |
 |---|---|---|---|---|
+| BlueLine-2 | 2 | 250 Hz | 3-axis, 100 Hz | 0.3.0 and newer |
 | BlueLine-4 | 4 | 250 Hz | 3-axis, 100 Hz | 0.3.0 and newer |
+| BlueLine-8 | 8 | 250 Hz | 3-axis, 100 Hz | 0.3.0 and newer |
 
 The SDK reads the channel count, rates and features from each device when it
 connects. Use `info.channelCount` instead of a fixed number, and your app works
@@ -394,6 +396,7 @@ data wrongly. See the [changelog](CHANGELOG.md).
 ## Roadmap
 
 - **Python**: EDF export.
+- **Upcoming support**: BlueLine-tDCS.
 
 ## License
 
