@@ -15,7 +15,7 @@
   <a href="#quick-start">Quick start</a> ·
   <a href="#how-a-session-works">Sessions</a> ·
   <a href="#data-reference">Data</a> ·
-  <a href="#signal-processing">Signal processing</a> ·
+  <a href="#signal-processing">Signal Processing</a> ·
   <a href="#api-across-platforms">API</a> ·
   <a href="docs/PROTOCOL.md">Protocol</a>
 </p>
